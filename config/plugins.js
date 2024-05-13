@@ -6,7 +6,7 @@ module.exports = ({ env }) => ({
           s3Options: {
             accessKeyId: env('CELLAR_ADDON_KEY_ID'),
             secretAccessKey: env('CELLAR_ADDON_KEY_SECRET'),
-            //region: env('AWS_REGION'),
+            region: env('CELLAR_REGION'),
             params: {
               Bucket: env('CELLAR_BUCKET'),
             },
