@@ -4,9 +4,12 @@ module.exports = ({ env }) => ({
         provider: 'aws-s3',
         providerOptions: {
           s3Options: {
-            accessKeyId: env('CELLAR_ADDON_KEY_ID'),
-            secretAccessKey: env('CELLAR_ADDON_KEY_SECRET'),
-            host: env('CELLAR_ADDON_HOST'),
+            credentials: {
+                accessKeyId: env('CELLAR_ADDON_KEY_ID'),
+                secretAccessKey: env('CELLAR_ADDON_KEY_SECRET'),
+              },
+            region: env('CELLAR_ADDON_REGION'), // e.g "fr-par"
+            endpoint: env('CELLAR_ADDON_HOST'), 
             params: {
               Bucket: env('CELLAR_BUCKET'),
             },
