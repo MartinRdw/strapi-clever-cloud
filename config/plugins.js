@@ -9,7 +9,7 @@ module.exports = ({ env }) => ({
                 secretAccessKey: env('CELLAR_ADDON_KEY_SECRET'),
               },
             region: env('CELLAR_ADDON_REGION'), // e.g "fr-par"
-            endpoint: env('CELLAR_ADDON_HOST'), 
+            endpoint: 'https://' + env('CELLAR_ADDON_HOST'), 
             params: {
               Bucket: env('CELLAR_BUCKET'),
             },
